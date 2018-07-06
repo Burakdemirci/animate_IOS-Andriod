@@ -54,28 +54,48 @@
 			"userProps": {
 				"title": "",
 				"titleColor": "rgba( 0, 0, 0, 1 )",
-				"visible": true
+				"visible": false
 			}
 		},
 		{
 			"className": ".flexLayout",
 			"id": "4e4a-57b4-1e91-3be7",
 			"props": {
-				"children": [],
+				"children": [
+					"2ff0-9ab6-9045-1c8d"
+				],
 				"name": "flexLayout1",
 				"parent": "e891b86d",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"backgroundColor": "rgba( 230, 30, 30, 1 )",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"flexProps": {
 					"alignSelf": "FLEX_START"
 				},
-				"height": 551.7340087890625,
-				"left": -7,
+				"height": 616.1016376201923,
+				"left": -10,
 				"usePageVariable": true,
-				"width": 355.3571428571429
+				"width": 363.04945725661054
+			}
+		},
+		{
+			"className": ".label",
+			"id": "2ff0-9ab6-9045-1c8d",
+			"props": {
+				"children": [],
+				"name": "label1",
+				"parent": "4e4a-57b4-1e91-3be7",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"backgroundColor": "rgba( 171, 245, 219, 0.58 )",
+				"flexProps": {},
+				"height": 66.92307692307692,
+				"usePageVariable": true,
+				"width": 362.3076923076923
 			}
 		}
 	]

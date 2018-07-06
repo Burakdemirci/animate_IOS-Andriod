@@ -5,8 +5,12 @@ const View       = require("sf-core/ui/view");
 const Color      = require("sf-core/ui/color");
 const Animator   = require("sf-core/ui/animator");
 const FlexLayout = require("sf-core/ui/flexlayout");
+const TextAlignment = require('sf-core/ui/textalignment');
 
-
+var label;
+var score = 0 ;
+var life  = 1;
+var level = 1 ;
 
 // Get generated UI code
 const Page1Design = require("ui/ui_page1");
@@ -48,16 +52,17 @@ function onShow(superOnShow) {
    }).then(20000,function(){
        animatedView.width = 250;
        animatedView.height=250;
-       backgroundColor: Color.create(255, 0, 0);
+       animatedView.backgroundColor = Color.RED;
    });
     
 }
 
 var animatedView = new View({
-    left:1, top:1, width: 100, height: 100,
+    left:1, top:80, width: 100, height: 100,
     positionType: FlexLayout.PositionType.ABSOLUTE,
     backgroundColor: Color.create("#00A1F1")
 });
+
 
 /**
  * @event onLoad
@@ -69,7 +74,23 @@ function onLoad(superOnLoad) {
     superOnLoad();
     page.headerBar.leftItemEnabled = false;
     page.flexLayout1.addChild(animatedView);
+    label = page.label1 ;
+    setLabel(score,life);
 }
 
+
+
+function setLabel(score,life){
+    
+   
+    label.text = "  SCORE : "+score+ "            LEVEL :"+level+
+    "                CHANCE : " + life;
+    textAlignment: TextAlignment.MIDLEFT;
+    
+    if(life ==2)
+       label.backgroundColor = Color.create("#f78c52"); //Orange
+    if(life== 1)
+        label.backgroundColor = Color.create("#f60303"); //darkRed
+}  
 
 module.exports = Page1;
