@@ -7,7 +7,8 @@
 			"props": {
 				"children": [
 					"42b807d1",
-					"b7d28cff"
+					"b7d28cff",
+					"4e4a-57b4-1e91-3be7"
 				],
 				"isRemovable": true,
 				"name": "page1",
@@ -54,6 +55,26 @@
 				"title": "",
 				"titleColor": "rgba( 0, 0, 0, 1 )",
 				"visible": true
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "4e4a-57b4-1e91-3be7",
+			"props": {
+				"children": [],
+				"name": "flexLayout1",
+				"parent": "e891b86d",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"alignSelf": "FLEX_START"
+				},
+				"height": 551.7340087890625,
+				"left": -7,
+				"usePageVariable": true,
+				"width": 355.3571428571429
 			}
 		}
 	]
