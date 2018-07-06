@@ -1,0 +1,13 @@
+{
+	"config": {
+		"theme": {
+			"currentTheme": "animateTheme",
+			"themes": [
+				"animateTheme",
+				"defaultTheme"
+			],
+			"baseTheme": "animateTheme"
+		},
+		"version": "6.8.2"
+	}
+}

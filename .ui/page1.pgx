@@ -1,0 +1,60 @@
+{
+	"components": [
+		{
+			"className": ".page",
+			"id": "e891b86d",
+			"initialized": true,
+			"props": {
+				"children": [
+					"42b807d1",
+					"b7d28cff"
+				],
+				"isRemovable": true,
+				"name": "page1",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {
+				"flexProps": {
+					"justifyContent": "SPACE_AROUND"
+				},
+				"orientation": "PORTRAIT",
+				"paddingLeft": 10,
+				"paddingRight": 10
+			},
+			"version": "6.8.2"
+		},
+		{
+			"className": ".statusBar",
+			"id": "42b807d1",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "e891b86d"
+			},
+			"type": "StatusBar",
+			"userProps": {
+				"visible": true
+			}
+		},
+		{
+			"className": ".headerBar",
+			"id": "b7d28cff",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "e891b86d",
+				"title": ""
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "",
+				"titleColor": "rgba( 0, 0, 0, 1 )",
+				"visible": true
+			}
+		}
+	]
+}
