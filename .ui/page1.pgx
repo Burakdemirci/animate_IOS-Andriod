@@ -68,6 +68,7 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"backgroundColor": "rgba( 230, 30, 30, 1 )",
 				"flexProps": {
 					"alignSelf": "FLEX_START"
 				},

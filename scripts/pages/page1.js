@@ -45,6 +45,10 @@ function onShow(superOnShow) {
     }).then(1000, function() {
        animatedView.width = 100;
        animatedView.height = 100;
+   }).then(20000,function(){
+       animatedView.width = 250;
+       animatedView.height=250;
+       backgroundColor: Color.create(255, 0, 0);
    });
     
 }
@@ -63,6 +67,7 @@ var animatedView = new View({
 function onLoad(superOnLoad) {
     const page = this;
     superOnLoad();
+    page.headerBar.leftItemEnabled = false;
     page.flexLayout1.addChild(animatedView);
 }
 
