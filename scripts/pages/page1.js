@@ -6,12 +6,23 @@ const Color      = require("sf-core/ui/color");
 const Animator   = require("sf-core/ui/animator");
 const FlexLayout = require("sf-core/ui/flexlayout");
 const TextAlignment = require('sf-core/ui/textalignment');
+const Game = require( "../pages/game");
+
 
 var label;
 var score = 0 ;
 var life  = 3;
 var level = 1 ;
 var pagee;
+var speed = 1000;
+
+var objtop =125;
+var objheight=10;
+var objleft=1;
+var objwidh=10;
+var x=1,y=1;
+
+
 // Get generated UI code
 const Page1Design = require("ui/ui_page1");
 
@@ -39,7 +50,7 @@ function onShow(superOnShow) {
     const page = this;
     superOnShow();
     pagee=page;
-   
+   /*
     Animator.animate(page.flexLayout1, 1000, function() {
        animatedView.width = 300;
        animatedView.height = 300;
@@ -51,20 +62,13 @@ function onShow(superOnShow) {
        animatedView.width = 100;
        animatedView.height = 100;
    }).then(20000,function(){
-      
+       collisionTime();
        animatedView.width = 250;
        animatedView.height=250;
        animatedView.backgroundColor = Color.RED;
-   });
+   });*/
     
 }
-
-var animatedView = new View({
-    left:1, top:80, width: 100, height: 100,
-    positionType: FlexLayout.PositionType.ABSOLUTE,
-    backgroundColor: Color.create("#00A1F1")
-});
-
 
 var rightborderView = new View({
     
@@ -90,9 +94,18 @@ var downborderView = new View({
 
 });
 
+
+var gameObj = new View({
+    left:objleft, top:objtop, width:objwidh, height: objheight,
+    positionType: FlexLayout.PositionType.ABSOLUTE,
+    backgroundColor: Color.create("#00A1F1")
+});
+
+
+
 function collisionTime(){
      
-    Animator.animate(pagee.flexLayout1, 100, function() {
+    Animator.animate(pagee.children.flexLayout1, 100, function() {
        setBorderColor(Color.create("#f0ab28"));
     }).then(150, function() {
        setBorderColor(Color.YELLOW);
@@ -132,12 +145,36 @@ function onLoad(superOnLoad) {
     page.flexLayout1.addChild(rightborderView);
     page.flexLayout1.addChild(upborderView);
     page.flexLayout1.addChild(downborderView);
-    page.flexLayout1.addChild(animatedView);
+    page.flexLayout1.addChild(gameObj);
     label = page.label1 ;
-    setLabel(score,life);
+    setGame();
 }
 
 
+function setGame(){
+    objtop = 125;
+    objleft=1;
+    setLabel(score,life);
+    randomCreation();
+    setGameObj();
+}
+
+function setGameObj(){
+  
+    gameObj.left= objleft;
+    gameObj.top = objtop;
+    gameObj.width=objwidh;
+    gameObj.height=objheight;
+    y<0 ? objtop-=y : objtop+=y ;
+    objleft+=x;
+
+}
+
+function randomCreation(){
+    var sign = Math.floor(Math.random()*2);
+    sign==0 ? y =-1 : y = 1;
+    objtop +=Math.floor(Math.random()*400); 
+}
 
 function setLabel(score,life){
     
@@ -150,5 +187,10 @@ function setLabel(score,life){
     if(life== 1)
         label.backgroundColor = Color.create("#f60303"); //darkRed
 }  
+
+
+function runGame(){
+    
+}
 
 module.exports = Page1;
